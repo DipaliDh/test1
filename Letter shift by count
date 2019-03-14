@@ -1,0 +1,30 @@
+#inlude<stdio.h>
+
+
+main()
+{
+	unsigned char i; // maximum 256 string characters can be entered
+	unsigned char count = 0;
+	
+	char str[i];
+	
+	printf(" Enter a string:");
+  scanf("%s",&str);
+	printf(" Enter a count:");
+	scanf("%d",&count);
+		
+	while(str[i]!= '\0') // executes task till string ends
+	{
+     if(str[i] != 0x20) // count will get added in each character skipping a space in a string
+     {
+	    str[i] = str[i]+count;
+	   }
+	  i++;
+	}
+	
+	printf(" the string is: %s",str); // displays modified string
+	
+	return 0;
+	
+	
+} 
