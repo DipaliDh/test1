@@ -1,30 +1,75 @@
-#inlude<stdio.h>
 
 
-main()
+
+	
+	
+	
+	
+	
+	
+	#include<stdio.h>
+#include<string.h>
+#define MAX 255
+int main()
 {
 	unsigned char i; // maximum 256 string characters can be entered
-	unsigned char count = 0;
-	
-	char str[i];
-	
-	printf(" Enter a string:");
-  scanf("%s",&str);
+	unsigned int count = 0;
+	char str[MAX];
+
+	printf(" Enter a string:\n"); 
+	fgets(str, MAX, stdin); 
+	printf("%s",str);
 	printf(" Enter a count:");
-	scanf("%d",&count);
-		
+	scanf("%d", &count);
+        printf("%d \n",count);
+  
 	while(str[i]!= '\0') // executes task till string ends
 	{
-     if(str[i] != 0x20) // count will get added in each character skipping a space in a string
+     if(str[i] != 0x20)// count will get added in each character skipping a space in a string
      {
-	    str[i] = str[i]+count;
-	   }
-	  i++;
-	}
-	
-	printf(" the string is: %s",str); // displays modified string
-	
+      if(('a'<= str[i]) && (str[i]  <= 'z'))                  // compares if character is between a & z 
+      {
+      	if(str[i] > 'z')
+      	{
+      	 str[i] = str[i] - 0x1A; // if character is greater than z then 0x1A gets sutracted from a character value....so that after z, it will point to 'a'. 
+      	}      
+      }
+      else if(('A' <= str[i]) && (str[i] <= 'Z'))                  // compares if character is between A & Z
+      {
+      	str[i] = str[i] + count;// adds a count to character value to 
+      	if(str[i] > 'Z')   
+      	{
+      	 str[i] = str[i] - 0x1A; // if character is greater than Z then 0x1A gets sutracted from a character value....so that after Z, it will point to 'A'. 
+      	}
+      }
+       
+     }
+      
+	   i++;
+	  
+  }
+	printf(" The modified string is %s \n",str); // displays modified string
+
 	return 0;
-	
-	
+
+
 } 
+
+
+	
+		
+	
+	
+     
+	   
+	   
+	 
+	
+	
+	
+	
+	
+	
+	
+
+
