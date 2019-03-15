@@ -28,7 +28,8 @@ int main()
      if(str[i] != 0x20)// count will get added in each character skipping a space in a string
      {
       if(('a'<= str[i]) && (str[i]  <= 'z'))                  // compares if character is between a & z 
-      {
+      { 
+   	str[i] = str[i] + count;// adds a count to character value 
       	if(str[i] > 'z')
       	{
       	 str[i] = str[i] - 0x1A; // if character is greater than z then 0x1A gets sutracted from a character value....so that after z, it will point to 'a'. 
@@ -36,7 +37,7 @@ int main()
       }
       else if(('A' <= str[i]) && (str[i] <= 'Z'))                  // compares if character is between A & Z
       {
-      	str[i] = str[i] + count;// adds a count to character value to 
+      	str[i] = str[i] + count;// adds a count to character value 
       	if(str[i] > 'Z')   
       	{
       	 str[i] = str[i] - 0x1A; // if character is greater than Z then 0x1A gets sutracted from a character value....so that after Z, it will point to 'A'. 
